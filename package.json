@@ -1,0 +1,30 @@
+{
+  "name": "eslint-plugin-kodekonveyor",
+  "version": "1.0.0",
+  "description": "rules of the Kode Konveyor typescript implementation pattern",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kodekonveyor/eslint-plugin-kodekonveyor.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Kode konveyor OÜ",
+  "main": "src/rules.tsx",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7",
+    "jest": "^26.1.0"
+  },
+  "dependencies": {
+    "@types/eslint": "^7.2.0"
+  }
+}

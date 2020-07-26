@@ -1,0 +1,21 @@
+build_image: kodekonveyor/toolchain:3.6
+
+integrations:
+  hub:
+    - integrationName: docker
+      type: dockerRegistryLogin
+  key:
+    - integrationName: kodekonveyor
+      type: sshKey
+  generic:
+    - integrationName: kkpipeline
+
+
+build:
+  ci:
+    - /usr/local/toolchain/tools/Script
+  on_success:
+    - /usr/local/toolchain/tools/publish
+  on_failure:
+    - /usr/local/toolchain/tools/publish
+

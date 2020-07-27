@@ -12,12 +12,12 @@
     "eslint-plugin"
   ],
   "author": "Kode konveyor OÜ",
-  "main": "src/rules.tsx",
+  "main": "src/rules.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint ."
   },
-  "license": "ISC",
+  "license": "GNU GPL",
   "devDependencies": {
     "eslint": "^4.8.0",
     "ts-jest": "^26.1.3",

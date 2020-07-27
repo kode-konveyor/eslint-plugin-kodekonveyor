@@ -5,8 +5,14 @@ function fixer (c) {
   };
 }
 
-module.exports =  
-  () => {
+module.exports =  {
+      meta: {
+        fixable: "code",
+      },
+      create: noCommentRule()
+    }
+
+function noCommentRule() {
     return function (context) {
       return {
         Program(node) {

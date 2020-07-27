@@ -1,11 +1,8 @@
-const noCommentRule = require("./noCommentRule")
+'use strict';
 
-console.log(noCommentRule)
-module.exports = {
-    'no-comment': {
-      meta: {
-        fixable: "code",
-      },
-      create: noCommentRule()
-    }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+const rules = exports.rules = {
+  'no-comment': require('./noCommentRule')
 }

@@ -19,7 +19,7 @@ function noCommentRule() {
           node.comments.forEach(c => {
             if(!(
               c.value.includes("@generated") ||
-              c.value.includes("eslint-disable-next-line") ||
+              c.value.includes("eslint-disable-next-line") 
             )) {
               context.report({
                 node: c,

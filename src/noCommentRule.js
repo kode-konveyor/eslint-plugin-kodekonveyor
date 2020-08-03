@@ -17,7 +17,10 @@ function noCommentRule() {
       return {
         Program(node) {
           node.comments.forEach(c => {
-            if(!c.value.includes("@generated")) {
+            if(!(
+              c.value.includes("@generated") ||
+              c.value.includes("eslint-disable-next-line") ||
+            )) {
               context.report({
                 node: c,
                 message: "Clean code does not use comments. Put it to a well-named function if you would need a comment.",

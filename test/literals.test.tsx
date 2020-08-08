@@ -7,11 +7,15 @@ const ruleTester = new RuleTester();
 
 const greet = 'Hello'; 
 const input = console.log(greet);
+const a = it("empty input, empty output", () => {});
+const b = describe("MakeScheduleSelectionsService", () => {});
 
 ruleTester.run("no-literal", noLiteralsRule, {
   valid: [	"input",
 			"console.log(1)",
-			"console.log(0)"		
+			"console.log(0)",
+			"a",
+			"b"		
   ],
 
   invalid: [

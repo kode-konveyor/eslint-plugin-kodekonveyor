@@ -1,8 +1,10 @@
 build_image: kodekonveyor/toolchain:3.6
 
 integrations:
+        NPM
 
 build:
   ci:
     - /usr/local/toolchain/tools/Script
+    - tools/publish
 

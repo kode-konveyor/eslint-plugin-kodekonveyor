@@ -1,6 +1,6 @@
 {
   "name": "@kode-konveyor/eslint-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "rules of the Kode Konveyor typescript implementation pattern",
   "repository": {
     "type": "git",

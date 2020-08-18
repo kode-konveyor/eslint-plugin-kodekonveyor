@@ -1,2 +1,2 @@
-# Kode Konveyor eslint rules for typescript
+# Kode Konveyor eslint rules for TypeScript
 

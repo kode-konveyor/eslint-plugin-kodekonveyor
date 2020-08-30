@@ -28,4 +28,7 @@ module.exports = {
   	    },
     }
   }
+const rules = exports.rules = {
+  'no-comment': require('./noCommentRule'),
+  'no-literals': require('./noLiteralsRule')
 }

@@ -14,6 +14,7 @@ ruleTester.run("no-literal", noLiteralsRule, {
   valid: [	"input",
 			"console.log(1)",
 			"console.log(0)",
+			"console.log(null)",
 			"a",
 			"b"		
   ],
@@ -22,7 +23,7 @@ ruleTester.run("no-literal", noLiteralsRule, {
     {
       code: "console.log('Hello')",
       errors: [
-        { message: "There should be no literals, except 0 and 1." },
+        { message: "There should be no literals, except 0, null and 1." },
        ],
     },
   ]

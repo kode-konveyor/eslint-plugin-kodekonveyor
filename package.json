@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@types/eslint": "^7.2.0",
-    "@types/jest": "^26.0.9",
+    "@types/jest": "^26.0.14",
     "eslint-plugin-promise": "latest"
   }
 }

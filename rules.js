@@ -3,4 +3,7 @@ module.exports = {
     "kodekonveyor/no-comment": 2,
     "promise/prefer-await-to-then": "error",
     "kodekonveyor/no-literals": 2,
+    "filenames/match-regex": [2, "(^[a-z]+[A-Z]+[a-z]+[.](?:tsx)$).*", true],
+    "filenames/match-exported": 2,
+    "no-restricted-syntax": "error"
   }

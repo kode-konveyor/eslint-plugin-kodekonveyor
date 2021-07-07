@@ -1,0 +1,5 @@
+if [ $BRANCH = "master" ]
+then
+        npm version patch
+	npm publish
+fi

@@ -29,7 +29,7 @@ export const noLiteralsContract = new Contract()
             errors: [
               {
                 message:
-                  "There should be no literals, except 0, null, false, true and 1. fix it in log",
+                  "There should be no literals, except 0, null, false, true and 1. fix it in 'log()'",
               },
             ],
           },
@@ -38,7 +38,7 @@ export const noLiteralsContract = new Contract()
             errors: [
               {
                 message:
-                  "There should be no literals, except 0, null, false, true and 1. fix it in thenReturn",
+                  "There should be no literals, except 0, null, false, true and 1. fix it in 'thenReturn()'",
               },
             ],
           },

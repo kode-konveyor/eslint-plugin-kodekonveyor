@@ -15,7 +15,7 @@
   "author": "Kode konveyor OÜ",
   "main": "dist/rules.cjs",
   "scripts": {
-    "prepublishOnly": "npm lint && npm build && runcontracts",
+    "prepublishOnly": "npm run lint && npm run build && runContracts",
     "build": "esbuild src/rules.ts --bundle --format=cjs --outfile=dist/rules.cjs",
     "test": "runContracts",
     "lint": "eslint ."

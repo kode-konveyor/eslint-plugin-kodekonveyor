@@ -15,24 +15,27 @@
   "author": "Kode konveyor OÜ",
   "main": "dist/rules.cjs",
   "scripts": {
-    "prepublishOnly": "npm run lint && npm run build && runContracts",
+    "qa": "npm run build && npm run lint && runContracts",
     "build": "esbuild src/rules.ts --bundle --format=cjs --outfile=dist/rules.cjs",
     "test": "runContracts",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish",
+    "publish:minor": "npm run qa && npm version minor && git push origin develop --tags && npm publish",
+    "publish:major": "npm run qa && npm version major && git push origin develop --tags && npm publish"
   },
   "license": "GNU GPL",
   "devDependencies": {
-    "cdd-ts": "file:../cdd-ts",
-    "esbuild": "^0.17.15",
-    "eslint": "^8.38.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-config-standard-with-typescript": "^24.0.0",
-    "eslint-plugin-eslint-plugin": "^5.0.8",
-    "eslint-plugin-self": "^1.2.1"
+    "cdd-ts": "latest",
+    "esbuild": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-eslint-plugin": "latest",
+    "eslint-plugin-self": "latest"
   },
   "dependencies": {
-    "@types/eslint": "^7.2.0",
+    "@types/eslint": "latest",
     "eslint-plugin-promise": "latest",
-    "typescript": "^5.0.4"
+    "typescript": "latest"
   }
 }

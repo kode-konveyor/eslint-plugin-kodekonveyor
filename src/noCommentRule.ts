@@ -1,5 +1,5 @@
-import { AST, Rule } from "eslint";
-import { Program, Comment, Node } from "estree";
+import { type AST, type Rule } from "eslint";
+import { type Program, type Comment, type Node } from "estree";
 
 const GENERATED = "@generated";
 const ESLINT_DISABLE = "eslint-disable";
@@ -10,11 +10,12 @@ function fixer(c: Comment) {
     return fixer.remove(c as unknown as AST.Token);
   };
 }
+
 function noCommentRulecreator(context: Rule.RuleContext): {
   Program: (node: Program) => void;
 } {
   return {
-    Program(node: Program) {
+    Program: function (node: Program) {
       node.comments?.forEach((c: Comment) => {
         if (
           !(

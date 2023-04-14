@@ -1,5 +1,5 @@
-import { Rule } from "eslint";
-import { CallExpression, Expression, Super } from "estree";
+import { type Rule } from "eslint";
+import { type CallExpression, type Expression, type Super } from "estree";
 
 function calleeName(callee: Expression | Super): string {
   switch (callee.type) {

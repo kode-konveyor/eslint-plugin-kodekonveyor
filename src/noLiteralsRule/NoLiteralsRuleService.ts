@@ -20,14 +20,15 @@ export class NoLiteralsRuleService {
     );
     if (
       argmap.some((arg, index) => {
+        const callee = this.calleeName(expression);
+        if (callee === "thenThrow") return false;
+
         if (arg && index === 0) {
-          const callee = this.calleeName(expression);
           if (
             callee === "setTitle" ||
             callee === "thenReturn" ||
             callee === "suchThat" ||
-            callee === "meanwhile" ||
-            callee === "thenThrow"
+            callee === "meanwhile"
           )
             return false;
         }

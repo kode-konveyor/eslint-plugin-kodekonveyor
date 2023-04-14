@@ -1,6 +1,11 @@
 import { type Rule } from "eslint";
 import { type Program, type Comment, type Node } from "estree";
-import { GENERATED, ESLINT_DISABLE, SHEBANG } from "./Constants";
+import {
+  GENERATED,
+  ESLINT_DISABLE,
+  SHEBANG,
+  TS_EXPECT_ERROR,
+} from "./Constants";
 import { NoCommentRuleFixerService } from "./NoCommentRuleFixerService";
 
 export class NoCommentRuleService {
@@ -11,12 +16,14 @@ export class NoCommentRuleService {
   ) {}
 
   noCommentRule(node: Program): void {
-    node.comments?.forEach((c: Comment) => {
+    (node.comments as Array<Comment>).forEach((c: Comment) => {
       if (
         !(
           c.value.includes(GENERATED) ||
           c.value.includes(ESLINT_DISABLE) ||
-          (c.type === SHEBANG && c.loc?.start.line === 1)
+          c.value.includes(TS_EXPECT_ERROR) ||
+          // @ts-expect-error the type definition does not include Shebang
+          c.type === SHEBANG
         )
       ) {
         this.context.report({

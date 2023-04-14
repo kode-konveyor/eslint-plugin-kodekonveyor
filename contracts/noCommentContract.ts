@@ -4,17 +4,23 @@ import { Contract } from "cdd-ts/dist/src/contract/Contract";
 
 const ruleTester = new RuleTester();
 
-const input = `
+const input = `#!/bin/bash
 //line comment
-foo = 1;
+// @ts-expect-error
+ foo = 1;
+// @generated
+ bar = 2
 /* 
   block comment
   */
 `;
 
-const output = `
+const output = `#!/bin/bash
 
-foo = 1;
+// @ts-expect-error
+ foo = 1;
+// @generated
+ bar = 2
 
 `;
 
@@ -29,6 +35,9 @@ export const noCommentContract = new Contract()
         valid: [
           {
             code: "bar = 2;",
+          },
+          {
+            code: "#!hehe\nbar = 2;",
           },
         ],
 

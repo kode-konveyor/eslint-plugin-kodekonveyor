@@ -1,7 +1,7 @@
-import { type Expression, type Super } from "estree";
+import { type Expression, type Super, type PrivateIdentifier } from "estree";
 
 export class CalleeName {
-  calleeName(callee: Expression | Super): string {
+  calleeName(callee: Expression | Super | PrivateIdentifier): string {
     switch (callee.type) {
       case "MemberExpression":
         return this.calleeName(callee.property);
@@ -11,6 +11,7 @@ export class CalleeName {
 
       case "CallExpression":
         return this.calleeName(callee.callee);
+
       default:
         return "<unknown>";
     }

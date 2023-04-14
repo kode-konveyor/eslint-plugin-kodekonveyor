@@ -19,7 +19,7 @@
     "mutate": "stryker run",
     "buildall": "npm run build && npm run contractbuild",
     "build": "esbuild src/rules.ts --bundle --format=cjs --outfile=dist/rules.cjs",
-    "contractbuild": "for i in contracts/*; do npx esbuild $i --bundle --platform=node --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",
+    "contractbuild": "for i in contracts/*; do esbuild $i --bundle --platform=node  --external:espree --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",
     "test": "npm run contractbuild && runContracts",
     "lint": "eslint .",
     "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish",

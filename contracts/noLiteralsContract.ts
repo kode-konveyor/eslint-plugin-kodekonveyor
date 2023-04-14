@@ -1,6 +1,6 @@
-import { Contract } from "cdd-ts";
 import { RuleTester } from "eslint";
-import { noLiteralsRule } from "../src/noLiteralsRule.js";
+import { noLiteralsRule } from "../src/noLiteralsRule/noLiteralsRule.js";
+import { Contract } from "cdd-ts/dist/src/contract/Contract";
 
 const ruleTester = new RuleTester();
 

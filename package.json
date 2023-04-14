@@ -2,7 +2,7 @@
   "name": "eslint-plugin-kodekonveyor",
   "version": "1.0.0",
   "description": "rules of the Kode Konveyor typescript implementation pattern",
-  "type": "module",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/kodekonveyor/eslint-plugin-kodekonveyor.git"
@@ -15,9 +15,12 @@
   "author": "Kode konveyor OÜ",
   "main": "dist/rules.cjs",
   "scripts": {
-    "qa": "npm run build && npm run lint && runContracts",
+    "qa": "npm run build && npm run lint && npm run test&& npm run mutate",
+    "mutate": "stryker run",
+    "buildall": "npm run build && npm run contractbuild",
     "build": "esbuild src/rules.ts --bundle --format=cjs --outfile=dist/rules.cjs",
-    "test": "runContracts",
+    "contractbuild": "for i in contracts/*; do npx esbuild $i --bundle --platform=node --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",
+    "test": "npm run contractbuild && runContracts",
     "lint": "eslint .",
     "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish",
     "publish:minor": "npm run qa && npm version minor && git push origin develop --tags && npm publish",
@@ -31,7 +34,8 @@
     "eslint-config-prettier": "latest",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-plugin-eslint-plugin": "latest",
-    "eslint-plugin-self": "latest"
+    "eslint-plugin-self": "latest",
+    "@stryker-mutator/core": "latest"
   },
   "dependencies": {
     "@types/eslint": "latest",

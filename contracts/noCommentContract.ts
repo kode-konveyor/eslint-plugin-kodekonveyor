@@ -1,6 +1,6 @@
-import { Contract } from "cdd-ts";
 import { RuleTester } from "eslint";
-import { noCommentRule } from "../src/noCommentRule.js";
+import { noCommentRule } from "../src/noCommentRule/noCommentRule.js";
+import { Contract } from "cdd-ts/dist/src/contract/Contract";
 
 const ruleTester = new RuleTester();
 
@@ -38,11 +38,11 @@ export const noCommentContract = new Contract()
             errors: [
               {
                 message:
-                  "Clean code does not use comments. Put it to a well-named function if you would need a comment.",
+                  "Clean code does not use comments. Use a well-named function instead of them.",
               },
               {
                 message:
-                  "Clean code does not use comments. Put it to a well-named function if you would need a comment.",
+                  "Clean code does not use comments. Use a well-named function instead of them.",
               },
             ],
             output,

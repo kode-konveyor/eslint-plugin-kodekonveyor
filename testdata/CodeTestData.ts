@@ -7,4 +7,10 @@ export const CodeTestData = {
   setTitlePassing: "setTitle('exp')",
   suchThatPassing: "IfCalledWith(1).suchThat('exp',false)",
   meanWhilePassing: "IfCalledWith(1).meanwhile('exp',false)",
+  zero: "console.log(0)",
+  one: "console.log(1)",
+  true: "console.log(true)",
+  false: "console.log(false)",
+  null: "console.log(null)",
+  unnamed: `(()=>2)('hello')`,
 };

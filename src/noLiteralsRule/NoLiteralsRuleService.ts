@@ -38,9 +38,8 @@ export class NoLiteralsRuleService {
       this.context.report({
         node: expression,
         message:
-          "There should be no literals, except 0, null, false, true and 1. fix it in '" +
-          this.calleeName(expression) +
-          "()'",
+          "There should be no literals, except 0, null, false, true and 1. fix it in " +
+          this.calleeName(expression),
       });
     }
   }

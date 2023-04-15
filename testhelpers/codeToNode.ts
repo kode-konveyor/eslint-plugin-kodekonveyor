@@ -9,7 +9,13 @@ export function codeToNode<T extends Record<string, string>>(
   const ret: Record<string, () => Node> = {};
   for (const key in codes) {
     ret[key] = () =>
-      getNodeOfType(parse(codes[key] as string), type) as unknown as Node;
+      getNodeOfType(
+        parse(codes[key] as string, {
+          ecmaVersion: 2015,
+          sourceType: "module",
+        }),
+        type
+      ) as unknown as Node;
   }
   return ret as AsNodeGetters<T>;
 }

@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "noEmit": true,
     "baseUrl": ".",
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true,

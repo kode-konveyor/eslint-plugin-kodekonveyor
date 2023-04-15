@@ -1,4 +1,4 @@
-import { NoCommentRuleFactory } from "./NoCommentRuleFactory";
+import { NoCommentRuleFactory } from "./noCommentRule/NoCommentRuleFactory";
 
 export const noCommentRule = {
   meta: {

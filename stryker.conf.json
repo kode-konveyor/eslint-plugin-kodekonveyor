@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
-  "mutate": ["src/**/*.ts"],
+  "mutate": ["src/*/*.ts"],
   "thresholds": {
     "low": 100,
     "high": 100

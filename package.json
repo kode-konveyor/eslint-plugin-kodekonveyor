@@ -15,8 +15,8 @@
   "author": "Kode konveyor OÜ",
   "main": "dist/rules.cjs",
   "scripts": {
-    "qa": "npm run build && npm run lint && npm run test&& npm run mutate",
-    "mutate": "stryker run",
+    "qa": "tsc && npm run build && npm run lint && npm run test&& npm run mutate",
+    "mutate": "stryker run && tools/checktsmutate",
     "buildall": "npm run build && npm run contractbuild",
     "build": "esbuild src/rules.ts --bundle --format=cjs --outfile=dist/rules.cjs",
     "contractbuild": "for i in contracts/*; do esbuild $i --bundle --platform=node  --external:espree --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",

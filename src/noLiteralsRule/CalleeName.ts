@@ -13,7 +13,7 @@ export class CalleeName {
         return this.calleeName(callee.callee);
 
       default:
-        return "<unknown>";
+        return callee.type;
     }
   }
 }

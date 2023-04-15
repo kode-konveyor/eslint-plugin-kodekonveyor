@@ -1,4 +1,4 @@
-import { NoLiteralsRuleFactory } from "./NoLiteralsRuleFactory";
+import { NoLiteralsRuleFactory } from "./noLiteralsRule/NoLiteralsRuleFactory";
 
 export const noLiteralsRule = {
   meta: {

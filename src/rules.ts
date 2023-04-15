@@ -1,5 +1,5 @@
-import { noCommentRule } from "./noCommentRule/noCommentRule";
-import { noLiteralsRule } from "./noLiteralsRule/noLiteralsRule";
+import { noCommentRule } from "./noCommentRule";
+import { noLiteralsRule } from "./noLiteralsRule";
 
 export const rules = {
   "no-comment": noCommentRule,

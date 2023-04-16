@@ -3,12 +3,13 @@ import { ContextTestdata } from "../testdata/ContextTestdata";
 import { CallExpressionTestData } from "testdata/CallExpressionTestData";
 import { NoLiteralsRuleFactory } from "../src/noLiteralsRule/NoLiteralsRuleFactory";
 import { type NoLiteralsRuleDelegate } from "../src/noLiteralsRule/NoLiteralsRuleDelegate";
+import { ReturnValueTestdata } from "../testdata/ReturnValueTestdata";
 
-export const noLiteralsContractParties = [
+export const noLiteralsRuleContractParties = [
   NoLiteralsRuleFactory(ContextTestdata.default).CallExpression,
 ];
 
-export const noLiteralsContract = new Contract<
+export const noLiteralsRuleContract = new Contract<
   NoLiteralsRuleDelegate["CallExpression"]
 >()
   .setTitle("No literals rule")
@@ -20,7 +21,7 @@ export const noLiteralsContract = new Contract<
   )
 
   .ifCalledWith(CallExpressionTestData.expressionStatementPassing)
-  .thenReturn("A passing expression statement passes", () => undefined)
+  .thenReturn("A passing expression statement passes", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.thenReturnFailing)
   .thenThrow(
@@ -31,38 +32,47 @@ export const noLiteralsContract = new Contract<
   .ifCalledWith(CallExpressionTestData.thenReturnPassing)
   .thenReturn(
     "Thenreturn with just the first argument as literal passes",
-    () => undefined
+    ReturnValueTestdata.void
   )
 
   .ifCalledWith(CallExpressionTestData.thenThrowPassing)
   .thenReturn(
     "thenThrow with both arguments as literal passes",
-    () => undefined
+    ReturnValueTestdata.void
   )
 
   .ifCalledWith(CallExpressionTestData.setTitlePassing)
-  .thenReturn("setTitle passes", () => undefined)
+  .thenReturn("setTitle passes", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.suchThatPassing)
-  .thenReturn("suchThat with first arg as literal passes", () => undefined)
+  .thenReturn(
+    "suchThat with first arg as literal passes",
+    ReturnValueTestdata.void
+  )
 
   .ifCalledWith(CallExpressionTestData.meanWhilePassing)
-  .thenReturn("meanWhile with first arg as literal passes", () => undefined)
+  .thenReturn(
+    "meanWhile with first arg as literal passes",
+    ReturnValueTestdata.void
+  )
+
+  .ifCalledWith(CallExpressionTestData.whenPassing)
+  .thenReturn("when with first arg as literal passes", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.zero)
-  .thenReturn("zero is an accepted literal", () => undefined)
+  .thenReturn("zero is an accepted literal", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.one)
-  .thenReturn("one is an accepted literal", () => undefined)
+  .thenReturn("one is an accepted literal", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.true)
-  .thenReturn("true is an accepted literal", () => undefined)
+  .thenReturn("true is an accepted literal", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.false)
-  .thenReturn("false is an accepted literal", () => undefined)
+  .thenReturn("false is an accepted literal", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.null)
-  .thenReturn("null is an accepted literal", () => undefined)
+  .thenReturn("null is an accepted literal", ReturnValueTestdata.void)
 
   .ifCalledWith(CallExpressionTestData.unnamed)
   .thenThrow(

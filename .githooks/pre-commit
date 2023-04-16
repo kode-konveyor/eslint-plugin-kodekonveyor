@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -e
 # Redirect output to stderr.
 exec 1>&2
 
@@ -25,3 +25,5 @@ else
 fi
 
 exec git diff-index --check --cached HEAD --
+
+npm run test

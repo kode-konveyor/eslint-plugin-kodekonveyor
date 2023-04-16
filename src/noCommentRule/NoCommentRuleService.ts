@@ -11,11 +11,11 @@ import { NoCommentRuleFixerService } from "./NoCommentRuleFixerService";
 export class NoCommentRuleService {
   constructor(
     readonly context: Rule.RuleContext,
-    readonly noCommentRuleFixer = NoCommentRuleFixerService.prototype
-      .noCommentRuleFixer
+    readonly noCommentRuleFixerService = NoCommentRuleFixerService.prototype
+      .noCommentRuleFixerService
   ) {}
 
-  noCommentRule(node: Program): void {
+  noCommentRuleService(node: Program): void {
     (node.comments as Array<Comment>).forEach((c: Comment) => {
       if (
         !(
@@ -30,7 +30,7 @@ export class NoCommentRuleService {
           node: c as unknown as Node,
           message:
             "Clean code does not use comments. Use a well-named function instead of them.",
-          fix: this.noCommentRuleFixer(c),
+          fix: this.noCommentRuleFixerService(c),
         });
       }
     });

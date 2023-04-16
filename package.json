@@ -18,7 +18,7 @@
     "qa": "tsc && npm run build && npm run lint && npm run test&& npm run mutate",
     "mutate": "stryker run && tools/checktsmutate",
     "buildall": "npm run build && npm run contractbuild",
-    "build": "esbuild src/rules.ts --bundle --format=cjs --outfile=dist/rules.cjs",
+    "build": "esbuild src/rules.ts --bundle --format=cjs --platform=node --outfile=dist/rules.cjs",
     "contractbuild": "for i in contracts/*; do esbuild $i --bundle --platform=node  --external:espree --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",
     "test": "npm run contractbuild && runContracts",
     "lint": "eslint .",
@@ -28,14 +28,15 @@
   },
   "license": "GNU GPL",
   "devDependencies": {
+    "@stryker-mutator/core": "latest",
+    "@typescript-eslint/parser": "latest",
     "cdd-ts": "latest",
     "esbuild": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-plugin-eslint-plugin": "latest",
-    "eslint-plugin-self": "latest",
-    "@stryker-mutator/core": "latest"
+    "eslint-plugin-self": "latest"
   },
   "dependencies": {
     "@types/eslint": "latest",

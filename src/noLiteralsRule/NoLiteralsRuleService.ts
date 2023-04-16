@@ -28,6 +28,7 @@ export class NoLiteralsRuleService {
             callee === "setTitle" ||
             callee === "thenReturn" ||
             callee === "suchThat" ||
+            callee === "when" ||
             callee === "meanwhile"
           )
             return false;

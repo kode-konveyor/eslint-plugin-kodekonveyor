@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "es2021": true
@@ -6,7 +7,8 @@
   "extends": [
     "standard-with-typescript",
     "prettier",
-    "plugin:eslint-plugin/recommended"],
+    "plugin:eslint-plugin/recommended"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",

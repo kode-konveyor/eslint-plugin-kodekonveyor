@@ -1,6 +1,9 @@
-import { type Node } from "estree";
+import type { TSESTree } from "@typescript-eslint/types";
 
-export function getNodeOfType(node: Node, type: string): Node | undefined {
+export function getNodeOfType(
+  node: TSESTree.Node,
+  type: string
+): TSESTree.Node | undefined {
   if (node.type === type) return node;
   if (node.type === "Program")
     for (const statement of node.body) {

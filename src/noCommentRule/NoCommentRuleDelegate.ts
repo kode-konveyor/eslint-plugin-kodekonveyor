@@ -7,9 +7,10 @@ export class NoCommentRuleDelegate {
   Program: (node: Program) => void;
   constructor(
     readonly context: Rule.RuleContext,
-    readonly noCommentRuleFixer = NoCommentRuleFixerService.prototype
-      .noCommentRuleFixer
+    readonly noCommentRuleFixerService = NoCommentRuleFixerService.prototype
+      .noCommentRuleFixerService
   ) {
-    this.Program = NoCommentRuleService.prototype.noCommentRule.bind(this);
+    this.Program =
+      NoCommentRuleService.prototype.noCommentRuleService.bind(this);
   }
 }

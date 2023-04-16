@@ -24,6 +24,6 @@ else
 	exit 1
 fi
 
-exec git diff-index --check --cached HEAD --
-
 npm run test
+
+exec git diff-index --check --cached HEAD --

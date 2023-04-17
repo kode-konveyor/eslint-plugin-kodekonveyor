@@ -18,31 +18,31 @@ export const CodeTestData = {
   import { foo } from "bar"
   export class ServiceRuleService {
     constructor(readonly context: Rule.RuleContext) {}
-    serviceRuleService(): void {}
+    serviceRule(): void {}
   }`,
   serviceOtherName: `
   import { foo } from "bar"
   export class CommentRuleService {
     constructor(readonly context: Rule.RuleContext) {}
-    commentRuleService(): void {}
+    commentRule(): void {}
   }`,
   serviceNoName: `
   import { foo } from "bar"
   export class {
     constructor(readonly context: Rule.RuleContext) {}
-    serviceRuleService(): void {}
+    serviceRule(): void {}
   }`,
   serviceBadName: `
   export class ServiceRuleService {
     constructor(readonly context: Rule.RuleContext) {}
-    ServiceRuleService(): void {}
+    ServiceRule(): void {}
   }`,
   justImports: `import { foo } from "bar"`,
   serviceMoreitemsInBody: `
   const foo = 1
   export class ServiceRuleService {
     constructor(readonly context: Rule.RuleContext) {}
-    ServiceRuleService(): void {}
+    ServiceRule(): void {}
   }
   `,
   serviceWitUnnamedExport: `
@@ -50,14 +50,14 @@ export const CodeTestData = {
   export const bar = 1
   export class ServiceRuleService {
     constructor(readonly context: Rule.RuleContext) {}
-    ServiceRuleService(): void {}
+    ServiceRule(): void {}
   }
   `,
   serviceWitConst: `
   export const bar = 1
   export class ServiceRuleService {
     constructor(readonly context: Rule.RuleContext) {}
-    ServiceRuleService(): void {}
+    ServiceRule(): void {}
   }
   `,
   serviceWithNonMethodMember: `
@@ -65,6 +65,6 @@ export const CodeTestData = {
   export class ServiceRuleService {
     constructor(readonly context: Rule.RuleContext) {}
     foo = 1
-    serviceRuleService(): void {}
+    serviceRule(): void {}
   }`,
 };

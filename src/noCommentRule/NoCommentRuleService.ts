@@ -12,10 +12,10 @@ export class NoCommentRuleService {
   constructor(
     readonly context: Rule.RuleContext,
     readonly noCommentRuleFixerService = NoCommentRuleFixerService.prototype
-      .noCommentRuleFixerService
+      .noCommentRuleFixer
   ) {}
 
-  noCommentRuleService(node: Program): void {
+  noCommentRule(node: Program): void {
     (node.comments as Array<Comment>).forEach((c: Comment) => {
       if (
         !(

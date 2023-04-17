@@ -8,9 +8,8 @@ export class NoCommentRuleDelegate {
   constructor(
     readonly context: Rule.RuleContext,
     readonly noCommentRuleFixerService = NoCommentRuleFixerService.prototype
-      .noCommentRuleFixerService
+      .noCommentRuleFixer
   ) {
-    this.Program =
-      NoCommentRuleService.prototype.noCommentRuleService.bind(this);
+    this.Program = NoCommentRuleService.prototype.noCommentRule.bind(this);
   }
 }

@@ -6,8 +6,7 @@ export class NoLiteralsRuleDelegate {
   constructor(
     readonly context: Rule.RuleContext,
     readonly calleeName = CalleeName.prototype.calleeName,
-    readonly CallExpression = NoLiteralsRuleService.prototype
-      .noLiteralsRuleService
+    readonly CallExpression = NoLiteralsRuleService.prototype.noLiteralsRule
   ) {
     this.CallExpression = CallExpression.bind(this);
   }

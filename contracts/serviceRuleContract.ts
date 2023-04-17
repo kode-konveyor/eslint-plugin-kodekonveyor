@@ -63,7 +63,7 @@ export const serviceRuleContract = new Contract()
 
   .ifCalledWith(ProgramTestData.serviceOtherName)
   .thenThrow(
-    "A service should export the service class with name",
+    "The Service name should be the same as the file base name",
     "The Service name should be the same as the file base name"
   )
 
@@ -76,7 +76,7 @@ export const serviceRuleContract = new Contract()
   .ifCalledWith(ProgramTestData.serviceBadName)
   .thenThrow(
     "If the method name cannot be the lowercased classname because external requirements, use it in a Delegate",
-    "Method name of a Service must be the class name lowercased"
+    "Method name of a Service must be the class name lowercased without 'Service'"
   )
 
   .ifCalledWith(ProgramTestData.serviceWitUnnamedExport)

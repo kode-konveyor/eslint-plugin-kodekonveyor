@@ -8,7 +8,7 @@ export class NoLiteralsRuleService {
     readonly calleeName = CalleeName.prototype.calleeName
   ) {}
 
-  noLiteralsRuleService(expression: CallExpression): void {
+  noLiteralsRule(expression: CallExpression): void {
     const argmap = expression.arguments.map(
       (arg) =>
         arg.type === "Literal" &&

@@ -21,6 +21,7 @@
     "self/no-comment": 2,
     "promise/prefer-await-to-then": "error",
     "self/no-literals": 2,
+    "self/service": 2,
     "no-useless-catch": "off",
     "@typescript-eslint/array-type": [
       2,

@@ -2,7 +2,7 @@
   "name": "eslint-plugin-kodekonveyor",
   "version": "1.0.4",
   "description": "rules of the Kode Konveyor typescript implementation pattern",
-  "type": "commonjs",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/kodekonveyor/eslint-plugin-kodekonveyor.git"
@@ -19,7 +19,7 @@
     "mutate": "stryker run && tools/checktsmutate",
     "buildall": "npm run build && npm run contractbuild",
     "build": "esbuild src/rules.ts --bundle --format=cjs --platform=node --outfile=dist/rules.cjs",
-    "contractbuild": "for i in contracts/*; do esbuild $i --bundle --platform=node  --external:espree --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",
+    "contractbuild": "for i in contracts/*; do esbuild $i --format=esm --bundle --platform=node  --external:espree --external:eslint --external:colors --external:commander --external:debug --external:@typescript-eslint/parser --outfile=dist/contracts/$(basename $i .ts ).js --sourcemap=inline; done",
     "test": "npm run contractbuild && runContracts",
     "lint": "eslint .",
     "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish",

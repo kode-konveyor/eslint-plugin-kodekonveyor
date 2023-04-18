@@ -1,9 +1,8 @@
-import { Contract } from "cdd-ts/dist/src/contract/Contract";
+import { Contract, Mutex } from "cdd-ts";
 import { ServiceRuleFactory } from "../src/serviceRule/ServiceRuleFactory";
 import { ContextTestdata } from "../testdata/ContextTestdata";
 import { ProgramTestData } from "../testdata/ProgramTestData";
 import { ReturnValueTestdata } from "../testdata/ReturnValueTestdata";
-import { Mutex } from "cdd-ts/src/util/Mutex";
 import { type EnvironmentManipulatorType } from "cdd-ts/dist/src/types/EnvironmentManipulatorType";
 
 export const serviceRuleContractParties = [

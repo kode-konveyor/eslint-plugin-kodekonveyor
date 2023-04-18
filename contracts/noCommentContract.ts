@@ -1,6 +1,6 @@
 import { RuleTester } from "eslint";
 import { noCommentRule } from "../src/noCommentRule.js";
-import { Contract } from "cdd-ts/dist/src/contract/Contract";
+import { Contract } from "cdd-ts";
 
 const ruleTester = new RuleTester();
 

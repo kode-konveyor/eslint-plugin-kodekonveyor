@@ -1,9 +1,9 @@
 import { Contract } from "cdd-ts/dist/src/contract/Contract";
 import { ContextTestdata } from "../testdata/ContextTestdata";
-import { CallExpressionTestData } from "testdata/CallExpressionTestData";
 import { NoLiteralsRuleFactory } from "../src/noLiteralsRule/NoLiteralsRuleFactory";
 import { type NoLiteralsRuleDelegate } from "../src/noLiteralsRule/NoLiteralsRuleDelegate";
 import { ReturnValueTestdata } from "../testdata/ReturnValueTestdata";
+import { CallExpressionTestData } from "../testdata/CallExpressionTestData";
 
 export const noLiteralsRuleContractParties = [
   NoLiteralsRuleFactory(ContextTestdata.default).CallExpression,
